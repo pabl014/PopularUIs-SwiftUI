@@ -30,10 +30,7 @@ struct SpotifyHomeView: View {
                 ScrollView(.horizontal) {
                     HStack(spacing: 8) {
                         ForEach(0..<20) { _ in
-                            Rectangle()
-                                .fill(Color.red)
-                                .frame(width: 10, height: 10)
-                                
+                            SpotifyCategoryCell(title: "Title title title", isSelected: false)
                         }
                     }
                 }
