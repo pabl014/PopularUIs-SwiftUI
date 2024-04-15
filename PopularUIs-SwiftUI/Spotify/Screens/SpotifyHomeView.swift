@@ -18,15 +18,17 @@ struct SpotifyHomeView: View {
             Color.spotifyBlack
                 .ignoresSafeArea()
             HStack {
-                if let currentUser {
-                    ImageLoaderView(urlString: currentUser.image)
-                        .frame(width: 30, height: 30)
-                        .background(.spotifyWhite) // in case an image has some transparency
-                        .clipShape(Circle())
-                        .onTapGesture {
-                            // go to the profile screen
-                        }
+                ZStack {
+                    if let currentUser {
+                        ImageLoaderView(urlString: currentUser.image)
+                            .background(.spotifyWhite) // in case an image has some transparency
+                            .clipShape(Circle())
+                            .onTapGesture {
+                                // go to the profile screen
+                            }
+                    }
                 }
+                .frame(width: 30, height: 30)
                 
                 ScrollView(.horizontal) {
                     HStack(spacing: 8) {
