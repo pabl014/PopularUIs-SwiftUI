@@ -10,6 +10,7 @@ import SwiftUI
 struct SpotifyHomeView: View {
     
     @State private var currentUser: User? = nil
+    @State private var selectedCategory: Category? = nil
     
     var body: some View {
         
@@ -29,8 +30,14 @@ struct SpotifyHomeView: View {
                 
                 ScrollView(.horizontal) {
                     HStack(spacing: 8) {
-                        ForEach(0..<20) { _ in
-                            SpotifyCategoryCell(title: "Title title title", isSelected: false)
+                        ForEach(Category.allCases, id: \.self) { category in
+                            SpotifyCategoryCell(
+                                title: category.rawValue.capitalized,
+                                isSelected: category == selectedCategory
+                            )
+                            .onTapGesture {
+                                selectedCategory = category
+                            }
                         }
                     }
                 }
@@ -46,7 +53,7 @@ struct SpotifyHomeView: View {
         do {
             currentUser = try await DatabaseHelper().getUsers().first
         } catch {
-            print("Some error occured")
+            // print("Some error occured")
         }
     }
 }
