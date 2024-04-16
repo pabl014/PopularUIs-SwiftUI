@@ -24,13 +24,10 @@ struct SpotifyHomeView: View {
                 LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders], content: {
                     Section {
                         
-                        NonLazyVGrid(columns: 2, alignment: .center, spacing: 10, items: products) { product in
-                            if let product {
-                                SpotifyRecentsCell(imageName: product.firstImage,
-                                                   title: product.title)
-                            }
+                        VStack {
+                            recentsSection
                         }
-                        
+                        .padding(.horizontal, 16)
                         
                         ForEach(0..<20) { _ in
                             Rectangle()
@@ -98,6 +95,15 @@ struct SpotifyHomeView: View {
         .padding(.vertical, 24)
         .padding(.leading, 8)
         .background(Color.spotifyBlack)
+    }
+    
+    private var recentsSection: some View {
+        NonLazyVGrid(columns: 2, alignment: .center, spacing: 10, items: products) { product in
+            if let product {
+                SpotifyRecentsCell(imageName: product.firstImage,
+                                   title: product.title)
+            }
+        }
     }
 }
 
