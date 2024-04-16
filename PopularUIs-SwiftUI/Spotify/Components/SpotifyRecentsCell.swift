@@ -21,12 +21,10 @@ struct SpotifyRecentsCell: View {
                 .font(.callout)
                 .fontWeight(.semibold)
                 .lineLimit(2)
-                .foregroundStyle(.red)
-                .background(.green)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.trailing, 8) // to not let the text go too close to the right edge
-        .background(.blue)
+        .themeColors(isSelected: false)
         .clipShape(RoundedRectangle(cornerRadius: 6))
         
     }
