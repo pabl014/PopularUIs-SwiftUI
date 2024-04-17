@@ -120,7 +120,11 @@ struct SpotifyHomeView: View {
         NonLazyVGrid(columns: 2, alignment: .center, spacing: 10, items: products) { product in
             if let product {
                 SpotifyRecentsCell(imageName: product.firstImage,
-                                   title: product.title)
+                                   title: product.title
+                )
+                .asButton(.press) {
+                    
+                }
             }
         }
     }
@@ -158,7 +162,14 @@ struct SpotifyHomeView: View {
                 ScrollView(.horizontal) {
                     HStack(alignment: .top,spacing: 16) {
                         ForEach(row.products) { product in
-                            ImageTitleRowCell(imageSize: 120, imageName: product.firstImage, title: product.title)
+                            ImageTitleRowCell(
+                                imageSize: 120,
+                                imageName: product.firstImage,
+                                title: product.title
+                            )
+                            .asButton(.press) {
+                                
+                            }
                         }
                     }
                     .padding(.horizontal, 16)
