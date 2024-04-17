@@ -29,9 +29,11 @@ struct SpotifyHomeView: View {
                         VStack(spacing: 16) {
                             
                             recentsSection
+                                .padding(.horizontal, 16)
                             
                             if let product = products.first {
                                 newReleaseSection(product: product)
+                                    .padding(.horizontal, 16)
                             }
                             
                             ForEach(productRows) { row in
@@ -41,6 +43,7 @@ struct SpotifyHomeView: View {
                                         .fontWeight(.semibold)
                                         .foregroundStyle(.spotifyWhite)
                                         .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.horizontal, 16)
                                     
                                     ScrollView(.horizontal) {
                                         HStack(alignment: .top,spacing: 16) {
@@ -48,8 +51,12 @@ struct SpotifyHomeView: View {
                                                 ImageTitleRowCell(imageSize: 120, imageName: product.firstImage, title: product.title)
                                             }
                                         }
+                                        .background(.blue)
+                                        .padding(.horizontal, 16)
                                     }
                                     .scrollIndicators(.hidden)
+                                    .background(.red)
+                                    
                                 }
                             }
                             
@@ -57,7 +64,7 @@ struct SpotifyHomeView: View {
                             
                             
                         }
-                        .padding(.horizontal, 16)
+                        //.padding(.horizontal, 16)
                         //.background(.blue)
                         
                     } header: {
