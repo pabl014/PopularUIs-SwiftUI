@@ -27,3 +27,10 @@ struct ProductArray: Codable {
     let products: [Product]
     let total, skip, limit: Int
 }
+
+
+struct ProductRow: Identifiable {
+    let id = UUID().uuidString
+    let title: String
+    let products: [Product]
+}
