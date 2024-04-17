@@ -21,11 +21,17 @@ struct SpotifyHomeView: View {
                 .ignoresSafeArea()
             
             ScrollView(.vertical) {
-                LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders], content: {
+                LazyVStack(spacing: 10,
+                           pinnedViews: [.sectionHeaders],
+                           content: {
                     Section {
-                        
-                        VStack {
+                        VStack(spacing: 16) {
                             recentsSection
+                            
+                            if let product = products.first {
+                                newReleaseSection(product: product)
+                            }
+                            
                         }
                         .padding(.horizontal, 16)
                         
@@ -97,6 +103,7 @@ struct SpotifyHomeView: View {
         .background(Color.spotifyBlack)
     }
     
+    
     private var recentsSection: some View {
         NonLazyVGrid(columns: 2, alignment: .center, spacing: 10, items: products) { product in
             if let product {
@@ -104,6 +111,24 @@ struct SpotifyHomeView: View {
                                    title: product.title)
             }
         }
+    }
+    
+    // func not var, because here a product must be passed in
+    private func newReleaseSection(product: Product) -> some View {
+        
+        SpotifyNewReleaseView(
+            imageName: product.firstImage,
+            headline: product.brand,
+            subheadline: product.category,
+            title: product.title,
+            subtitle: product.description,
+            onAddToPlaylistPressed: {
+                
+            },
+            onPlayPressed: {
+                
+            }
+        )
     }
 }
 
