@@ -36,36 +36,8 @@ struct SpotifyHomeView: View {
                                     .padding(.horizontal, 16)
                             }
                             
-                            ForEach(productRows) { row in
-                                VStack(spacing: 8) {
-                                    Text(row.title)
-                                        .font(.title)
-                                        .fontWeight(.semibold)
-                                        .foregroundStyle(.spotifyWhite)
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                        .padding(.horizontal, 16)
-                                    
-                                    ScrollView(.horizontal) {
-                                        HStack(alignment: .top,spacing: 16) {
-                                            ForEach(row.products) { product in
-                                                ImageTitleRowCell(imageSize: 120, imageName: product.firstImage, title: product.title)
-                                            }
-                                        }
-                                        .background(.blue)
-                                        .padding(.horizontal, 16)
-                                    }
-                                    .scrollIndicators(.hidden)
-                                    .background(.red)
-                                    
-                                }
-                            }
-                            
-                            
-                            
-                            
+                            listRows
                         }
-                        //.padding(.horizontal, 16)
-                        //.background(.blue)
                         
                     } header: {
                         header
@@ -85,6 +57,7 @@ struct SpotifyHomeView: View {
     
     
     private func getData() async {
+        
         do {
             currentUser = try await DatabaseHelper().getUsers().first
             products = try await Array(DatabaseHelper().getProducts().prefix(8))
@@ -143,6 +116,7 @@ struct SpotifyHomeView: View {
     
     
     private var recentsSection: some View {
+        
         NonLazyVGrid(columns: 2, alignment: .center, spacing: 10, items: products) { product in
             if let product {
                 SpotifyRecentsCell(imageName: product.firstImage,
@@ -167,6 +141,31 @@ struct SpotifyHomeView: View {
                 
             }
         )
+    }
+    
+    
+    private var listRows: some View {
+        
+        ForEach(productRows) { row in
+            VStack(spacing: 8) {
+                Text(row.title)
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.spotifyWhite)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 16)
+                
+                ScrollView(.horizontal) {
+                    HStack(alignment: .top,spacing: 16) {
+                        ForEach(row.products) { product in
+                            ImageTitleRowCell(imageSize: 120, imageName: product.firstImage, title: product.title)
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                }
+                .scrollIndicators(.hidden)
+            }
+        }
     }
 }
 
