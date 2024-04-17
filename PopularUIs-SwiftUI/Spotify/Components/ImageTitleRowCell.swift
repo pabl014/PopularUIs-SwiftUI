@@ -17,6 +17,8 @@ struct ImageTitleRowCell: View {
         VStack(alignment: .leading, spacing: 8) {
             ImageLoaderView(urlString: imageName)
                 .frame(width: imageSize, height: imageSize)
+                .clipShape(RoundedRectangle(cornerRadius: 6))
+            
             Text(title)
                 .font(.callout)
                 .foregroundStyle(.spotifyLightGray)
