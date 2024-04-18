@@ -12,6 +12,8 @@ struct SpotifyPlaylistView: View {
     let product: Product = .mockProduct
     var user: User = .mockUser
     
+    @State private var products: [Product] = []
+    
     var body: some View {
         ZStack {
             Color.spotifyBlack.ignoresSafeArea()
@@ -37,9 +39,38 @@ struct SpotifyPlaylistView: View {
                         onPlayPressed: nil
                     )
                     .padding(.horizontal, 16)
+                    
+                    ForEach(products) { product in
+                        SongRowCell(
+                            imageSize: 50,
+                            imageName: product.firstImage,
+                            title: product.title,
+                            subtitle: product.brand,
+                            onCellPressed: {
+                                
+                            },
+                            onEllipsisPressed: {
+                                
+                            }
+                        )
+                        .padding(.leading, 16)
+                    }
                 }
             }
             .scrollIndicators(.hidden)
+        }
+        .task {
+            await getData()
+        }
+        .toolbar(.hidden, for: .navigationBar)
+    }
+    
+    private func getData() async {
+        
+        do {
+            products = try await DatabaseHelper().getProducts()
+        } catch {
+            
         }
     }
 }
