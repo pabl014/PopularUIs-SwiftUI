@@ -7,10 +7,13 @@
 
 import SwiftUI
 import SwiftfulUI
+import SwiftfulRouting
 
 struct SpotifyPlaylistView: View {
     
-    let product: Product = .mockProduct
+    @Environment(\.router) var router
+    
+    var product: Product = .mockProduct
     var user: User = .mockUser
     
     @State private var products: [Product] = []
@@ -52,7 +55,7 @@ struct SpotifyPlaylistView: View {
                             title: product.title,
                             subtitle: product.brand,
                             onCellPressed: {
-                                
+                                goToPlaylistView(product: product)
                             },
                             onEllipsisPressed: {
                                 
@@ -64,30 +67,8 @@ struct SpotifyPlaylistView: View {
             }
             .scrollIndicators(.hidden)
             
-            ZStack {
-                Text(product.title)
-                    .font(.headline)
-                    .padding(.vertical, 20)
-                    .frame(maxWidth: .infinity)
-                    .background(.spotifyBlack)
-                    .offset(y: showHeader ? 0 : -40) // lets the header look like it's comming in from the top
-                    .opacity(showHeader ? 1 : 0)
-                
-                Image(systemName: "chevron.left")
-                    .font(.title3)
-                    .padding(10)
-                    .background(showHeader ? Color.black.opacity(0.001) : .spotifyGray.opacity(0.7))
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        
-                    }
-                    .padding(.leading, 16)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    
-            }
-            .foregroundStyle(.spotifyWhite)
-            .animation(.smooth(duration: 0.2), value: showHeader)
-            .frame(maxHeight: .infinity, alignment: .top)
+            header
+                .frame(maxHeight: .infinity, alignment: .top)
                 
         }
         .task {
@@ -104,8 +85,44 @@ struct SpotifyPlaylistView: View {
             
         }
     }
+    
+    
+    private func goToPlaylistView(product: Product) {
+        router.showScreen(.push) { _ in
+            SpotifyPlaylistView(product: product, user: user)
+        }
+    }
+    
+    
+    private var header: some View {
+        ZStack {
+            Text(product.title)
+                .font(.headline)
+                .padding(.vertical, 20)
+                .frame(maxWidth: .infinity)
+                .background(.spotifyBlack)
+                .offset(y: showHeader ? 0 : -40) // lets the header look like it's comming in from the top
+                .opacity(showHeader ? 1 : 0)
+            
+            Image(systemName: "chevron.left")
+                .font(.title3)
+                .padding(10)
+                .background(showHeader ? Color.black.opacity(0.001) : .spotifyGray.opacity(0.7))
+                .clipShape(Circle())
+                .onTapGesture {
+                    router.dismissScreen()
+                }
+                .padding(.leading, 16)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+        }
+        .foregroundStyle(.spotifyWhite)
+        .animation(.smooth(duration: 0.2), value: showHeader)
+    }
 }
 
 #Preview {
-    SpotifyPlaylistView()
+    RouterView { _ in
+        SpotifyPlaylistView()
+    }
 }

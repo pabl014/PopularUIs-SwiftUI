@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import SwiftfulRouting
 
 @main
 struct PopularUIs_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RouterView { _ in
+                ContentView()
+            }
         }
     }
 }
