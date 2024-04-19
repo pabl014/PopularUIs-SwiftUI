@@ -13,6 +13,7 @@ struct SpotifyPlaylistView: View {
     var user: User = .mockUser
     
     @State private var products: [Product] = []
+    @State private var showHeader: Bool = true
     
     var body: some View {
         ZStack {
@@ -58,6 +59,30 @@ struct SpotifyPlaylistView: View {
                 }
             }
             .scrollIndicators(.hidden)
+            
+            ZStack {
+                Text(product.title)
+                    .font(.headline)
+                    .padding(.vertical, 20)
+                    .frame(maxWidth: .infinity)
+                    .background(.blue)
+                    .opacity(showHeader ? 1 : 0)
+                
+                Image(systemName: "chevron.left")
+                    .font(.title3)
+                    .padding(10)
+                    .background(showHeader ? Color.black.opacity(0.001) : .spotifyGray.opacity(0.7))
+                    .clipShape(Circle())
+                    .onTapGesture {
+                        
+                    }
+                    .padding(.leading, 16)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
+            }
+            .foregroundStyle(.spotifyWhite)
+            .frame(maxHeight: .infinity, alignment: .top)
+                
         }
         .task {
             await getData()
