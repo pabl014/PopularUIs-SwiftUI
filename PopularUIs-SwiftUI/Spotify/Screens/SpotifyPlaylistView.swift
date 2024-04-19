@@ -15,7 +15,6 @@ struct SpotifyPlaylistView: View {
     
     @State private var products: [Product] = []
     @State private var showHeader: Bool = true
-    @State private var offset: CGFloat = 0
     
     var body: some View {
         ZStack {
@@ -30,7 +29,6 @@ struct SpotifyPlaylistView: View {
                         height: 250
                     )
                     .readingFrame { frame in
-                        offset = frame.maxY
                         showHeader = frame.maxY < 150 ? true : false
                     }
                     
@@ -66,15 +64,13 @@ struct SpotifyPlaylistView: View {
             }
             .scrollIndicators(.hidden)
             
-            Text("\(offset)")
-                .foregroundStyle(.red)
-            
             ZStack {
                 Text(product.title)
                     .font(.headline)
                     .padding(.vertical, 20)
                     .frame(maxWidth: .infinity)
-                    .background(.blue)
+                    .background(.spotifyBlack)
+                    .offset(y: showHeader ? 0 : -40) // lets the header look like it's comming in from the top
                     .opacity(showHeader ? 1 : 0)
                 
                 Image(systemName: "chevron.left")
@@ -90,6 +86,7 @@ struct SpotifyPlaylistView: View {
                     
             }
             .foregroundStyle(.spotifyWhite)
+            .animation(.smooth(duration: 0.2), value: showHeader)
             .frame(maxHeight: .infinity, alignment: .top)
                 
         }
