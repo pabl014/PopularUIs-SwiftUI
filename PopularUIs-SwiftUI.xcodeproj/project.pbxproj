@@ -90,6 +90,7 @@
 				FE5FB85B2BC419FF00BE9245 /* PopularUIs_SwiftUIApp.swift */,
 				FE5FB85D2BC419FF00BE9245 /* ContentView.swift */,
 				FE5FB86C2BC41CAE00BE9245 /* Shared */,
+				FEAA8E592BD2BBE4008D1C84 /* Bumble */,
 				FEDC0E8C2BCD6D63006BA0B6 /* Spotify */,
 				FE5FB85F2BC41A0000BE9245 /* Assets.xcassets */,
 				FE5FB8612BC41A0000BE9245 /* Preview Content */,
@@ -115,6 +116,29 @@
 				FE5FB8752BC436B600BE9245 /* User.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		FEAA8E592BD2BBE4008D1C84 /* Bumble */ = {
+			isa = PBXGroup;
+			children = (
+				FEAA8E5A2BD2BEC1008D1C84 /* Components */,
+				FEAA8E5B2BD2BEC9008D1C84 /* Screens */,
+			);
+			path = Bumble;
+			sourceTree = "<group>";
+		};
+		FEAA8E5A2BD2BEC1008D1C84 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FEAA8E5B2BD2BEC9008D1C84 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		FEDC0E8C2BCD6D63006BA0B6 /* Spotify */ = {
