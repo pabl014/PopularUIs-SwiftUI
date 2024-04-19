@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftfulUI
 
 struct SpotifyPlaylistView: View {
     
@@ -14,6 +15,7 @@ struct SpotifyPlaylistView: View {
     
     @State private var products: [Product] = []
     @State private var showHeader: Bool = true
+    @State private var offset: CGFloat = 0
     
     var body: some View {
         ZStack {
@@ -27,6 +29,10 @@ struct SpotifyPlaylistView: View {
                         imageName: product.thumbnail,
                         height: 250
                     )
+                    .readingFrame { frame in
+                        offset = frame.maxY
+                        showHeader = frame.maxY < 150 ? true : false
+                    }
                     
                     PlaylistDescriptionCell(
                         descriptionText: product.description,
@@ -59,6 +65,9 @@ struct SpotifyPlaylistView: View {
                 }
             }
             .scrollIndicators(.hidden)
+            
+            Text("\(offset)")
+                .foregroundStyle(.red)
             
             ZStack {
                 Text(product.title)
