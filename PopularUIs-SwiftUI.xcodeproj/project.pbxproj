@@ -25,6 +25,7 @@
 		FEAA8E542BD29D9B008D1C84 /* SwiftfulUI in Frameworks */ = {isa = PBXBuildFile; productRef = FEAA8E532BD29D9B008D1C84 /* SwiftfulUI */; };
 		FEAA8E562BD29DA5008D1C84 /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = FEAA8E552BD29DA5008D1C84 /* SwiftfulRouting */; };
 		FEAA8E582BD29DB0008D1C84 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FEAA8E572BD29DB0008D1C84 /* SDWebImageSwiftUI */; };
+		FEAA8E5D2BD2BF67008D1C84 /* BumbleHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA8E5C2BD2BF67008D1C84 /* BumbleHomeView.swift */; };
 		FEDC0E902BCD6E64006BA0B6 /* SpotifyHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDC0E8F2BCD6E64006BA0B6 /* SpotifyHomeView.swift */; };
 		FEDC0E942BCD7795006BA0B6 /* SpotifyCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDC0E932BCD7795006BA0B6 /* SpotifyCategoryCell.swift */; };
 		FEDC0E972BCD7E3F006BA0B6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDC0E962BCD7E3F006BA0B6 /* Category.swift */; };
@@ -48,6 +49,7 @@
 		FEAA8E4D2BD03DBE008D1C84 /* PlaylistHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistHeaderView.swift; sourceTree = "<group>"; };
 		FEAA8E4F2BD144DE008D1C84 /* PlaylistDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDescriptionCell.swift; sourceTree = "<group>"; };
 		FEAA8E512BD15EE2008D1C84 /* SongRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRowCell.swift; sourceTree = "<group>"; };
+		FEAA8E5C2BD2BF67008D1C84 /* BumbleHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleHomeView.swift; sourceTree = "<group>"; };
 		FEDC0E8F2BCD6E64006BA0B6 /* SpotifyHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyHomeView.swift; sourceTree = "<group>"; };
 		FEDC0E932BCD7795006BA0B6 /* SpotifyCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyCategoryCell.swift; sourceTree = "<group>"; };
 		FEDC0E962BCD7E3F006BA0B6 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		FEAA8E5B2BD2BEC9008D1C84 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FEAA8E5C2BD2BF67008D1C84 /* BumbleHomeView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				FEDC0E972BCD7E3F006BA0B6 /* Category.swift in Sources */,
 				FEAA8E462BCFDB26008D1C84 /* SpotifyNewReleaseView.swift in Sources */,
 				FEDC0E942BCD7795006BA0B6 /* SpotifyCategoryCell.swift in Sources */,
+				FEAA8E5D2BD2BF67008D1C84 /* BumbleHomeView.swift in Sources */,
 				FE5FB8722BC42B4400BE9245 /* DatabaseHelper.swift in Sources */,
 				FEDC0E902BCD6E64006BA0B6 /* SpotifyHomeView.swift in Sources */,
 				FEAA8E482BCFEF5D008D1C84 /* ImageTitleRowCell.swift in Sources */,
