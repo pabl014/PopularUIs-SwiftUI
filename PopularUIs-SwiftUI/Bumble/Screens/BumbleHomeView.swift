@@ -8,12 +8,22 @@
 import SwiftUI
 
 struct BumbleHomeView: View {
+    
+    @State private var filters: [String] = ["Everyone", "Trending"]
+    @AppStorage("bumble_home_filter") private var selectedFilter = "Everyone" // it's going to save the state , that user is in: When user clicked on trending and then closes the app, reopens the app: AppStorage will take care of last selected filter
+    
     var body: some View {
         ZStack {
             Color.bumbleWhite.ignoresSafeArea()
             
-            VStack(spacing: 8) {
+            VStack(spacing: 12) {
                 header
+                
+                BumbleFilterView(options: filters, selection: $selectedFilter)
+                    .background(
+                        Divider(),
+                        alignment: .bottom
+                    )
                 
                 Spacer()
             }

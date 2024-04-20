@@ -10,7 +10,8 @@ import SwiftUI
 struct BumbleFilterView: View {
     
     var options: [String] = ["Everyone", "Trending"]
-    @State private var selection: String = "Everyone"
+    @Binding var selection: String
+    @Namespace private var namespace
     
     var body: some View {
         HStack(alignment: .top, spacing: 32) {
@@ -25,6 +26,7 @@ struct BumbleFilterView: View {
                     if selection == option {
                         RoundedRectangle(cornerRadius: 4)
                             .frame(height: 1.5)
+                            .matchedGeometryEffect(id: "selection", in: namespace)
                     }
                 }
                 .padding(.top, 8)
@@ -35,13 +37,27 @@ struct BumbleFilterView: View {
                 }
             }
         }
+        .animation(.smooth, value: selection)
     }
 }
+
+
+// this is how it's going to be called in
+fileprivate struct BumbleFilterViewPreview: View {
+    
+    var options: [String] = ["Everyone", "Trending", "siemson"]
+    @State private var selection = "Everyone"
+    
+    var body: some View {
+        BumbleFilterView(options: options, selection: $selection)
+    }
+}
+
 
 #Preview {
     
     VStack {
-        BumbleFilterView()
+        BumbleFilterViewPreview()
             .padding()
         
         Spacer()
