@@ -16,6 +16,9 @@ struct User: Codable, Identifiable {
     let height: Int
     let weight: Double
     
+    var work = "Worker at some job"
+    var education = "Graduate degree"
+    
     static var mockUser: User {
         User(
             id: 345,
