@@ -32,6 +32,11 @@ struct BumbleCardView: View {
                             Image(systemName: "graduationcap")
                             Text(user.education)
                         }
+                        
+                        BumbleHeartView()
+                            .onTapGesture {
+                                
+                            }
                     }
                     .padding(24)
                     //.background(.red)
