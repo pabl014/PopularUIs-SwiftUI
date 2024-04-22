@@ -25,6 +25,11 @@ struct BumbleCardView: View {
                 
                 myInterestsSection
                     .padding([.horizontal, .vertical], 24)
+                
+                ForEach(user.images, id: \.self) { image in
+                    ImageLoaderView(urlString: image)
+                        .frame(height: cardFrame.height)
+                }
             }
         }
         .scrollIndicators(.hidden)

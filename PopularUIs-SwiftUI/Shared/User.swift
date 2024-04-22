@@ -47,6 +47,15 @@ struct User: Codable, Identifiable {
         ]
     }
     
+    var images: [String] {
+        [
+            "https://picsum.photos/500/500",
+            "https://picsum.photos/600/600",
+            "https://picsum.photos/700/700"
+            
+        ]
+    }
+    
     static var mockUser: User {
         User(
             id: 345,
