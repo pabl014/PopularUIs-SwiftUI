@@ -33,6 +33,12 @@ struct BumbleCardView: View {
                 
                 locationSection
                     .padding([.horizontal, .vertical], 24)
+                
+                footerSection
+                    .padding(.top, 60)
+                    .padding(.horizontal, 32)
+                    .padding(.bottom, 60)
+                
             }
         }
         .scrollIndicators(.hidden)
@@ -162,6 +168,49 @@ struct BumbleCardView: View {
             )
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
+    
+    private var footerSection: some View {
+        
+        VStack(spacing: 24) {
+            HStack(spacing: 0) {
+                Circle()
+                    .fill(.bumbleYellow)
+                    .overlay(
+                        Image(systemName: "xmark")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                    )
+                    .frame(width: 60, height: 60)
+                    .onTapGesture {
+                        
+                    }
+                
+                Spacer(minLength: 0)
+                
+                Circle()
+                    .fill(.bumbleYellow)
+                    .overlay(
+                        Image(systemName: "checkmark")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                    )
+                    .frame(width: 60, height: 60)
+                    .onTapGesture {
+                        
+                    }
+            }
+            
+            Text("Hide and Report")
+                .font(.headline)
+                .foregroundStyle(.bumbleGray)
+                .padding(8)
+                .background(.black.opacity(0.001))
+                .onTapGesture {
+                    
+                }
+        }
     }
     
 }
