@@ -28,6 +28,25 @@ struct User: Codable, Identifiable {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     } 
     
+    var basics: [UserInterest] {
+        [
+            UserInterest(iconName: "ruler", emoji: nil, text: "\(height)"),
+            UserInterest(iconName: "graduationcap", emoji: nil, text: education),
+            UserInterest(iconName: "wineglass", emoji: nil, text: "Socially"),
+            UserInterest(iconName: "moon.stars.fill", emoji: nil, text: "Virgo")
+
+        ]
+    }
+    
+    var interests: [UserInterest] {
+        [
+            UserInterest(iconName: nil, emoji: "👟", text: "Running"),
+            UserInterest(iconName: nil, emoji: "🏋🏿‍♀️", text: "Gym"),
+            UserInterest(iconName: nil, emoji: "🎧", text: "Dalibomba"),
+            UserInterest(iconName: nil, emoji: "🍕", text: "Pizza")
+        ]
+    }
+    
     static var mockUser: User {
         User(
             id: 345,

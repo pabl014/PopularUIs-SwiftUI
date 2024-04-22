@@ -11,6 +11,7 @@
 		FE47350A2BD65B6F00F5D697 /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = FE4735092BD65B6F00F5D697 /* SwiftfulRouting */; };
 		FE47350D2BD65B7B00F5D697 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FE47350C2BD65B7B00F5D697 /* SDWebImageSwiftUI */; };
 		FE4735122BD691A100F5D697 /* InterestPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4735112BD691A100F5D697 /* InterestPillView.swift */; };
+		FE4735142BD69A4B00F5D697 /* InterestPillGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4735132BD69A4B00F5D697 /* InterestPillGridView.swift */; };
 		FE5FB85C2BC419FF00BE9245 /* PopularUIs_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5FB85B2BC419FF00BE9245 /* PopularUIs_SwiftUIApp.swift */; };
 		FE5FB85E2BC419FF00BE9245 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5FB85D2BC419FF00BE9245 /* ContentView.swift */; };
 		FE5FB8602BC41A0000BE9245 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE5FB85F2BC41A0000BE9245 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		FE4735112BD691A100F5D697 /* InterestPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPillView.swift; sourceTree = "<group>"; };
+		FE4735132BD69A4B00F5D697 /* InterestPillGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPillGridView.swift; sourceTree = "<group>"; };
 		FE5FB8582BC419FF00BE9245 /* PopularUIs-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PopularUIs-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE5FB85B2BC419FF00BE9245 /* PopularUIs_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularUIs_SwiftUIApp.swift; sourceTree = "<group>"; };
 		FE5FB85D2BC419FF00BE9245 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				FEAA8E602BD41AB4008D1C84 /* BumbleCardView.swift */,
 				FEAA8E622BD53CAC008D1C84 /* BumbleHeartView.swift */,
 				FE4735112BD691A100F5D697 /* InterestPillView.swift */,
+				FE4735132BD69A4B00F5D697 /* InterestPillGridView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				FE5FB8722BC42B4400BE9245 /* DatabaseHelper.swift in Sources */,
 				FEDC0E902BCD6E64006BA0B6 /* SpotifyHomeView.swift in Sources */,
 				FEAA8E482BCFEF5D008D1C84 /* ImageTitleRowCell.swift in Sources */,
+				FE4735142BD69A4B00F5D697 /* InterestPillGridView.swift in Sources */,
 				FEAA8E4A2BD0360D008D1C84 /* SpotifyPlaylistView.swift in Sources */,
 				FEAA8E4E2BD03DBE008D1C84 /* PlaylistHeaderView.swift in Sources */,
 				FE5FB85E2BC419FF00BE9245 /* ContentView.swift in Sources */,
