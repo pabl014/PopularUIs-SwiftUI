@@ -25,11 +25,14 @@ struct BumbleCardView: View {
                 
                 myInterestsSection
                     .padding([.horizontal, .vertical], 24)
-                
+
                 ForEach(user.images, id: \.self) { image in
                     ImageLoaderView(urlString: image)
                         .frame(height: cardFrame.height)
                 }
+                
+                locationSection
+                    .padding([.horizontal, .vertical], 24)
             }
         }
         .scrollIndicators(.hidden)
@@ -130,6 +133,33 @@ struct BumbleCardView: View {
                 sectionTitle(title: "My interests: ")
                 InterestPillGridView(interests: user.interests)
             }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
+    
+    private var locationSection: some View {
+        
+        VStack(alignment: .leading, spacing: 12) {
+            
+            HStack(spacing: 8) {
+                Image(systemName: "mappin.and.ellipse.circle.fill")
+                
+                Text(user.firstName + "'s Location")
+            }
+            .foregroundStyle(.bumbleGray)
+            .font(.body)
+            .fontWeight(.medium)
+            
+            Text("10 miles away")
+                .font(.headline)
+                .foregroundStyle(.bumbleBlack)
+            
+            InterestPillView(
+                iconName: nil ,
+                emoji: "🇵🇷",
+                text: "Lives in San Juan, Puerto Rico"
+            )
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
