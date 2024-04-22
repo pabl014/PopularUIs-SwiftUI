@@ -14,41 +14,57 @@ struct BumbleCardView: View {
     var body: some View {
         ScrollView(.vertical) {
             LazyVStack(spacing: 0) {
-                
-                ZStack(alignment: .bottomLeading) {
-                    ImageLoaderView(urlString: user.image)
-                        
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("\(user.firstName), \(user.age)")
-                            .font(.largeTitle)
-                            .fontWeight(.semibold)
-                        
-                        HStack(spacing: 4) {
-                            Image(systemName: "suitcase")
-                            Text(user.work)
-                        }
-                        
-                        HStack(spacing: 4) {
-                            Image(systemName: "graduationcap")
-                            Text(user.education)
-                        }
-                        
-                        BumbleHeartView()
-                            .onTapGesture {
-                                
-                            }
-                    }
-                    .padding(24)
-                    //.background(.red)
-                    .font(.callout)
-                    .fontWeight(.medium)
-                    .foregroundStyle(.bumbleWhite)
-                }
-                .frame(height: 600)
+                headerCell
+                    .frame(height: 700)
             }
         }
         .scrollIndicators(.hidden)
-        //.clipShape(RoundedRectangle(cornerRadius: 10))
+        .clipShape(RoundedRectangle(cornerRadius: 32))
+    }
+    
+    
+    private var headerCell: some View {
+        
+        ZStack(alignment: .bottomLeading) {
+            ImageLoaderView(urlString: user.image)
+                
+            VStack(alignment: .leading, spacing: 8) {
+                Text("\(user.firstName), \(user.age)")
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+                
+                HStack(spacing: 4) {
+                    Image(systemName: "suitcase")
+                    Text(user.work)
+                }
+                
+                HStack(spacing: 4) {
+                    Image(systemName: "graduationcap")
+                    Text(user.education)
+                }
+                
+                BumbleHeartView()
+                    .onTapGesture {
+                        
+                    }
+            }
+            .padding(24)
+            .font(.callout)
+            .fontWeight(.medium)
+            .foregroundStyle(.bumbleWhite)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(
+                LinearGradient(
+                    colors: [
+                        .bumbleBlack.opacity(0),
+                        .bumbleBlack.opacity(0.6),
+                        .bumbleBlack.opacity(0.6)
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            )
+        }
     }
 }
 
