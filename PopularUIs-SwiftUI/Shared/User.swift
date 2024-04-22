@@ -18,6 +18,7 @@ struct User: Codable, Identifiable {
     
     var work = "Worker at some job"
     var education = "Graduate degree"
+    var aboutMe = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     
     static var mockUser: User {
         User(

@@ -19,13 +19,24 @@ struct BumbleCardView: View {
             LazyVStack(spacing: 0) {
                 headerCell
                     .frame(height: cardFrame.height)
+                
+                aboutMeSection
+                    .padding([.horizontal, .vertical], 24)
             }
         }
         .scrollIndicators(.hidden)
+        .background(.bumbleBackgroundYellow)
         .clipShape(RoundedRectangle(cornerRadius: 32))
         .readingFrame { frame in
-               cardFrame = frame
+            cardFrame = frame
         }
+    }
+    
+    
+    private func sectionTitle(title: String) -> some View {
+        Text(title)
+            .font(.body)
+            .foregroundStyle(.bumbleGray)
     }
     
     
@@ -33,7 +44,7 @@ struct BumbleCardView: View {
         
         ZStack(alignment: .bottomLeading) {
             ImageLoaderView(urlString: user.image)
-                
+            
             VStack(alignment: .leading, spacing: 8) {
                 Text("\(user.firstName), \(user.age)")
                     .font(.largeTitle)
@@ -72,6 +83,32 @@ struct BumbleCardView: View {
             )
         }
     }
+    
+    private var aboutMeSection: some View {
+        
+        VStack(alignment: .leading, spacing: 12) {
+            sectionTitle(title: "About Me")
+            
+            Text(user.aboutMe)
+                .font(.body)
+                .fontWeight(.semibold)
+                .foregroundStyle(.bumbleBlack)
+            
+            HStack(spacing: 0) {
+                BumbleHeartView()
+                
+                Text("Send a Compliment")
+                    .font(.caption)
+                    .fontWeight(.semibold)
+            }
+            .padding([.horizontal, .trailing], 8)
+            .background(.bumbleYellow)
+            .clipShape(RoundedRectangle(cornerRadius: 32))
+            
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
 }
 
 #Preview {
