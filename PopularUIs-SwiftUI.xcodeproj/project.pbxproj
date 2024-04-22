@@ -10,6 +10,7 @@
 		FE4735072BD65B6500F5D697 /* SwiftfulUI in Frameworks */ = {isa = PBXBuildFile; productRef = FE4735062BD65B6500F5D697 /* SwiftfulUI */; };
 		FE47350A2BD65B6F00F5D697 /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = FE4735092BD65B6F00F5D697 /* SwiftfulRouting */; };
 		FE47350D2BD65B7B00F5D697 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FE47350C2BD65B7B00F5D697 /* SDWebImageSwiftUI */; };
+		FE4735122BD691A100F5D697 /* InterestPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4735112BD691A100F5D697 /* InterestPillView.swift */; };
 		FE5FB85C2BC419FF00BE9245 /* PopularUIs_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5FB85B2BC419FF00BE9245 /* PopularUIs_SwiftUIApp.swift */; };
 		FE5FB85E2BC419FF00BE9245 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5FB85D2BC419FF00BE9245 /* ContentView.swift */; };
 		FE5FB8602BC41A0000BE9245 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE5FB85F2BC41A0000BE9245 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE4735112BD691A100F5D697 /* InterestPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPillView.swift; sourceTree = "<group>"; };
 		FE5FB8582BC419FF00BE9245 /* PopularUIs-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PopularUIs-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE5FB85B2BC419FF00BE9245 /* PopularUIs_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularUIs_SwiftUIApp.swift; sourceTree = "<group>"; };
 		FE5FB85D2BC419FF00BE9245 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				FEAA8E5E2BD3F839008D1C84 /* BumbleFilterView.swift */,
 				FEAA8E602BD41AB4008D1C84 /* BumbleCardView.swift */,
 				FEAA8E622BD53CAC008D1C84 /* BumbleHeartView.swift */,
+				FE4735112BD691A100F5D697 /* InterestPillView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				FE5FB86E2BC41CE500BE9245 /* ImageLoaderView.swift in Sources */,
 				FEDC0E972BCD7E3F006BA0B6 /* Category.swift in Sources */,
 				FEAA8E462BCFDB26008D1C84 /* SpotifyNewReleaseView.swift in Sources */,
+				FE4735122BD691A100F5D697 /* InterestPillView.swift in Sources */,
 				FEAA8E612BD41AB4008D1C84 /* BumbleCardView.swift in Sources */,
 				FEDC0E942BCD7795006BA0B6 /* SpotifyCategoryCell.swift in Sources */,
 				FEAA8E5D2BD2BF67008D1C84 /* BumbleHomeView.swift in Sources */,
