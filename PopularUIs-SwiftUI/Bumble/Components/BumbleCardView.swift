@@ -6,20 +6,26 @@
 //
 
 import SwiftUI
+import SwiftfulUI
 
 struct BumbleCardView: View {
     
     var user: User = .mockUser
     
+    @State private var cardFrame: CGRect = .zero
+    
     var body: some View {
         ScrollView(.vertical) {
             LazyVStack(spacing: 0) {
                 headerCell
-                    .frame(height: 700)
+                    .frame(height: cardFrame.height)
             }
         }
         .scrollIndicators(.hidden)
         .clipShape(RoundedRectangle(cornerRadius: 32))
+        .readingFrame { frame in
+               cardFrame = frame
+        }
     }
     
     
