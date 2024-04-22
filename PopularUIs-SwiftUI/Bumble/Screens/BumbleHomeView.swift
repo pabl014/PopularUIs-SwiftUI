@@ -25,7 +25,7 @@ struct BumbleHomeView: View {
                         alignment: .bottom
                     )
                 
-                Spacer()
+                BumbleCardView()
             }
             .padding(8)
         }

@@ -11,6 +11,13 @@ import SwiftfulUI
 struct BumbleCardView: View {
     
     var user: User = .mockUser
+    var onSendAComplimentPressed: (() -> Void)? = nil
+    var onSuperLikePressed: (() -> Void)? = nil
+    var onXmarkPressed: (() -> Void)? = nil
+    var onCheckmarkPressed: (() -> Void)? = nil
+    var onHideAndReportPressed: (() -> Void)? = nil
+
+
     
     @State private var cardFrame: CGRect = .zero
     
@@ -43,6 +50,12 @@ struct BumbleCardView: View {
         }
         .scrollIndicators(.hidden)
         .background(.bumbleBackgroundYellow)
+        .overlay(
+            superlikeButton
+                .padding(24)
+            
+            , alignment: .bottomTrailing
+        )
         .clipShape(RoundedRectangle(cornerRadius: 32))
         .readingFrame { frame in
             cardFrame = frame
@@ -101,6 +114,22 @@ struct BumbleCardView: View {
         }
     }
     
+    
+    private var superlikeButton: some View {
+        Image(systemName: "hexagon.fill")
+            .foregroundStyle(.bumbleYellow)
+            .font(.system(size: 60))
+            .overlay(
+                Image(systemName: "star.fill")
+                    .foregroundStyle(.bumbleBlack)
+                    .font(.system(size: 30, weight: .medium))
+            )
+            .onTapGesture {
+                onSuperLikePressed?()
+            }
+    }
+    
+    
     private var aboutMeSection: some View {
         
         VStack(alignment: .leading, spacing: 12) {
@@ -121,6 +150,9 @@ struct BumbleCardView: View {
             .padding([.horizontal, .trailing], 8)
             .background(.bumbleYellow)
             .clipShape(RoundedRectangle(cornerRadius: 32))
+            .onTapGesture {
+                onSendAComplimentPressed?()
+            }
             
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -184,7 +216,7 @@ struct BumbleCardView: View {
                     )
                     .frame(width: 60, height: 60)
                     .onTapGesture {
-                        
+                        onXmarkPressed?()
                     }
                 
                 Spacer(minLength: 0)
@@ -198,7 +230,7 @@ struct BumbleCardView: View {
                     )
                     .frame(width: 60, height: 60)
                     .onTapGesture {
-                        
+                        onCheckmarkPressed?()
                     }
             }
             
@@ -208,7 +240,7 @@ struct BumbleCardView: View {
                 .padding(8)
                 .background(.black.opacity(0.001))
                 .onTapGesture {
-                    
+                    onHideAndReportPressed?()
                 }
         }
     }
