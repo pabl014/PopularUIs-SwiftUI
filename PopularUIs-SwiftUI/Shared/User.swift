@@ -16,9 +16,17 @@ struct User: Codable, Identifiable {
     let height: Int
     let weight: Double
     
-    var work = "Worker at some job"
-    var education = "Graduate degree"
-    var aboutMe = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    var work: String {
+        "Worker at some job"
+    }
+    
+    var education: String {
+        "Graduate degree"
+    }
+    
+    var aboutMe: String {
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    } 
     
     static var mockUser: User {
         User(
