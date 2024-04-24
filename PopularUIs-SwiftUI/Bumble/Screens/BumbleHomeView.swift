@@ -44,7 +44,7 @@ struct BumbleHomeView: View {
                                 
                                 let offsetValue = cardOffsets[user.id]
                                 
-                                userProfileCell(index: index)
+                                userProfileCell(user: user, index: index)
                                     .zIndex(Double(allUsers.count - index)) // reverse Z index to get "previous" on top, "current" in the middle and "next" at the bottom
                                     .offset(x: offsetValue == nil ? 0 : offsetValue == true ? 900 : -900)
                             }
@@ -126,35 +126,45 @@ struct BumbleHomeView: View {
     }
     
     
-    private func userProfileCell(index: Int) -> some View {
-        Rectangle()
-            .fill(index == 0 ? .red : .blue)
-            .overlay(
-                Text("\(currentSwipeOffset)")
-            )
-            .withDragGesture(
-                .horizontal,
-//                                        minimumDistance: 0,
-                resets: true,
-                rotationMultiplier: 1.05,
-                scaleMultiplier: 0.8,
-                onChanged: { dragOffset in
-                    // while we are dragging:
-                    currentSwipeOffset = dragOffset.width
-                },
-                onEnded: { dragOffset in
-                    // when user lets go of the drag:
-                    
-                    // swiping to the left:
-                    if dragOffset.width < -80 {
-                        userDidSelect(index: index, isLike: false)
-                    } else if dragOffset.width > 80 {
-                        // swiping to the right:
-                        userDidSelect(index: index, isLike: true)
-                    }
-                    //currentSwipeOffset = dragOffset.width
+    private func userProfileCell(user: User, index: Int) -> some View {
+        
+        BumbleCardView(
+            user: user,
+            onSendAComplimentPressed: nil,
+            onSuperLikePressed: nil,
+            onXmarkPressed: {
+                userDidSelect(index: index, isLike: false)
+            },
+            onCheckmarkPressed: {
+                userDidSelect(index: index, isLike: true)
+            },
+            onHideAndReportPressed: {
+                
+            }
+        )
+        .withDragGesture(
+            .horizontal,
+            //                                        minimumDistance: 0,
+            resets: true,
+            rotationMultiplier: 1.05,
+            scaleMultiplier: 0.8,
+            onChanged: { dragOffset in
+                // while we are dragging:
+                currentSwipeOffset = dragOffset.width
+            },
+            onEnded: { dragOffset in
+                // when user lets go of the drag:
+                
+                // swiping to the left:
+                if dragOffset.width < -80 {
+                    userDidSelect(index: index, isLike: false)
+                } else if dragOffset.width > 80 {
+                    // swiping to the right:
+                    userDidSelect(index: index, isLike: true)
                 }
-            )
+                //currentSwipeOffset = dragOffset.width
+            }
+        )
     }
     
     
