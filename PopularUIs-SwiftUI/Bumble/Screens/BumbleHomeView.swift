@@ -15,7 +15,7 @@ struct BumbleHomeView: View {
     @State private var allUsers: [User] = []
     @State private var selectedIndex: Int = 0
     @State private var cardOffsets: [Int:Bool] = [:] // UserId : (Direction is Right: true , Left: false)
-    @State private var offset: CGFloat = 0
+    @State private var currentSwipeOffset: CGFloat = 0
     
     var body: some View {
         ZStack {
@@ -52,6 +52,9 @@ struct BumbleHomeView: View {
                     } else {
                         ProgressView()
                     }
+                    
+                    overlaySwipingIndicators
+                        .zIndex(99999) // making in on top, because .zIndex was previously changed
                 }
                 .frame(maxHeight: .infinity) // to avoid pushing navigation bar from the centre to the top while loading data
                 .animation(.smooth, value: cardOffsets)
@@ -122,11 +125,12 @@ struct BumbleHomeView: View {
         .foregroundStyle(.bumbleBlack)
     }
     
+    
     private func userProfileCell(index: Int) -> some View {
         Rectangle()
             .fill(index == 0 ? .red : .blue)
             .overlay(
-                Text("\(index)")
+                Text("\(currentSwipeOffset)")
             )
             .withDragGesture(
                 .horizontal,
@@ -136,6 +140,7 @@ struct BumbleHomeView: View {
                 scaleMultiplier: 0.8,
                 onChanged: { dragOffset in
                     // while we are dragging:
+                    currentSwipeOffset = dragOffset.width
                 },
                 onEnded: { dragOffset in
                     // when user lets go of the drag:
@@ -147,9 +152,44 @@ struct BumbleHomeView: View {
                         // swiping to the right:
                         userDidSelect(index: index, isLike: true)
                     }
-                    offset = dragOffset.width
+                    //currentSwipeOffset = dragOffset.width
                 }
             )
+    }
+    
+    
+    private var overlaySwipingIndicators: some View {
+        
+        ZStack {
+            Circle()
+                .fill(.bumbleGray.opacity(0.4))
+                .overlay (
+                    Image(systemName: "xmark")
+                        .font(.title)
+                        .fontWeight(.semibold)
+                )
+                .frame(width: 60, height: 60)
+                .scaleEffect(abs(currentSwipeOffset) > 100 ? 1.5 : 1.0) // make it a little bit bigger during swiping
+                .offset(x: min(-currentSwipeOffset, 150)) // if we drag to the left: it moves to the right, but not further than 150
+                .offset(x: -100)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                //.background(.green)
+            
+            Circle()
+                .fill(.bumbleGray.opacity(0.4))
+                .overlay (
+                    Image(systemName: "checkmark")
+                        .font(.title)
+                        .fontWeight(.semibold)
+                )
+                .frame(width: 60, height: 60)
+                .scaleEffect(abs(currentSwipeOffset) > 100 ? 1.5 : 1.0) // make it a little bit bigger during swiping
+                .offset(x: max(-currentSwipeOffset, -150)) // if we drag to the right: it moves to the left, but not further than 150
+                .offset(x: 100)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                //.background(.green)
+        }
+        .animation(.smooth, value: currentSwipeOffset)
     }
 }
 
