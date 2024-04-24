@@ -14,6 +14,7 @@
 		FE4735142BD69A4B00F5D697 /* InterestPillGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4735132BD69A4B00F5D697 /* InterestPillGridView.swift */; };
 		FE4735162BD96D9600F5D697 /* BumbleProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4735152BD96D9600F5D697 /* BumbleProfileImageCell.swift */; };
 		FE4735182BD97EF100F5D697 /* BumbleChatPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4735172BD97EF100F5D697 /* BumbleChatPreviewCell.swift */; };
+		FE47351A2BD9923400F5D697 /* BumbleChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4735192BD9923400F5D697 /* BumbleChatsView.swift */; };
 		FE5FB85C2BC419FF00BE9245 /* PopularUIs_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5FB85B2BC419FF00BE9245 /* PopularUIs_SwiftUIApp.swift */; };
 		FE5FB85E2BC419FF00BE9245 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5FB85D2BC419FF00BE9245 /* ContentView.swift */; };
 		FE5FB8602BC41A0000BE9245 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE5FB85F2BC41A0000BE9245 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		FE4735132BD69A4B00F5D697 /* InterestPillGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPillGridView.swift; sourceTree = "<group>"; };
 		FE4735152BD96D9600F5D697 /* BumbleProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleProfileImageCell.swift; sourceTree = "<group>"; };
 		FE4735172BD97EF100F5D697 /* BumbleChatPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleChatPreviewCell.swift; sourceTree = "<group>"; };
+		FE4735192BD9923400F5D697 /* BumbleChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleChatsView.swift; sourceTree = "<group>"; };
 		FE5FB8582BC419FF00BE9245 /* PopularUIs-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PopularUIs-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE5FB85B2BC419FF00BE9245 /* PopularUIs_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularUIs_SwiftUIApp.swift; sourceTree = "<group>"; };
 		FE5FB85D2BC419FF00BE9245 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				FEAA8E5C2BD2BF67008D1C84 /* BumbleHomeView.swift */,
+				FE4735192BD9923400F5D697 /* BumbleChatsView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				FE5FB8742BC436A200BE9245 /* Product.swift in Sources */,
 				FE4735162BD96D9600F5D697 /* BumbleProfileImageCell.swift in Sources */,
 				FEAA8E5F2BD3F839008D1C84 /* BumbleFilterView.swift in Sources */,
+				FE47351A2BD9923400F5D697 /* BumbleChatsView.swift in Sources */,
 				FEAA8E522BD15EE2008D1C84 /* SongRowCell.swift in Sources */,
 				FEAA8E632BD53CAD008D1C84 /* BumbleHeartView.swift in Sources */,
 				FEAA8E502BD144DE008D1C84 /* PlaylistDescriptionCell.swift in Sources */,
