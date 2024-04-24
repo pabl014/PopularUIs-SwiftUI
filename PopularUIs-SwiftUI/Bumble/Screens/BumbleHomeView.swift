@@ -144,7 +144,7 @@ struct BumbleHomeView: View {
         )
         .withDragGesture(
             .horizontal,
-            //                                        minimumDistance: 0,
+            minimumDistance: 10, // if i don't drag left or right 10 pixels -> it's not a drag gesture
             resets: true,
             rotationMultiplier: 1.05,
             scaleMultiplier: 0.8,
@@ -199,6 +199,8 @@ struct BumbleHomeView: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 //.background(.green)
         }
+        .frame(maxHeight: .infinity)
+        .padding(4)
         .animation(.smooth, value: currentSwipeOffset)
     }
 }
