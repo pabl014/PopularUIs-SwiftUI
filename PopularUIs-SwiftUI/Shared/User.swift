@@ -16,6 +16,46 @@ struct User: Codable, Identifiable {
     let height: Int
     let weight: Double
     
+    var work: String {
+        "Worker at some job"
+    }
+    
+    var education: String {
+        "Graduate degree"
+    }
+    
+    var aboutMe: String {
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    } 
+    
+    var basics: [UserInterest] {
+        [
+            UserInterest(iconName: "ruler", emoji: nil, text: "\(height)"),
+            UserInterest(iconName: "graduationcap", emoji: nil, text: education),
+            UserInterest(iconName: "wineglass", emoji: nil, text: "Socially"),
+            UserInterest(iconName: "moon.stars.fill", emoji: nil, text: "Virgo")
+
+        ]
+    }
+    
+    var interests: [UserInterest] {
+        [
+            UserInterest(iconName: nil, emoji: "👟", text: "Running"),
+            UserInterest(iconName: nil, emoji: "🏋🏿‍♀️", text: "Gym"),
+            UserInterest(iconName: nil, emoji: "🎧", text: "Dalibomba"),
+            UserInterest(iconName: nil, emoji: "🍕", text: "Pizza")
+        ]
+    }
+    
+    var images: [String] {
+        [
+            "https://picsum.photos/500/500",
+            "https://picsum.photos/600/600",
+            "https://picsum.photos/700/700"
+            
+        ]
+    }
+    
     static var mockUser: User {
         User(
             id: 345,

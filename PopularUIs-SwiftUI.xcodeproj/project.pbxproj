@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE4735072BD65B6500F5D697 /* SwiftfulUI in Frameworks */ = {isa = PBXBuildFile; productRef = FE4735062BD65B6500F5D697 /* SwiftfulUI */; };
+		FE47350A2BD65B6F00F5D697 /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = FE4735092BD65B6F00F5D697 /* SwiftfulRouting */; };
+		FE47350D2BD65B7B00F5D697 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FE47350C2BD65B7B00F5D697 /* SDWebImageSwiftUI */; };
+		FE4735122BD691A100F5D697 /* InterestPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4735112BD691A100F5D697 /* InterestPillView.swift */; };
+		FE4735142BD69A4B00F5D697 /* InterestPillGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4735132BD69A4B00F5D697 /* InterestPillGridView.swift */; };
+		FE4735162BD96D9600F5D697 /* BumbleProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4735152BD96D9600F5D697 /* BumbleProfileImageCell.swift */; };
+		FE4735182BD97EF100F5D697 /* BumbleChatPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4735172BD97EF100F5D697 /* BumbleChatPreviewCell.swift */; };
+		FE47351A2BD9923400F5D697 /* BumbleChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4735192BD9923400F5D697 /* BumbleChatsView.swift */; };
 		FE5FB85C2BC419FF00BE9245 /* PopularUIs_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5FB85B2BC419FF00BE9245 /* PopularUIs_SwiftUIApp.swift */; };
 		FE5FB85E2BC419FF00BE9245 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5FB85D2BC419FF00BE9245 /* ContentView.swift */; };
 		FE5FB8602BC41A0000BE9245 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE5FB85F2BC41A0000BE9245 /* Assets.xcassets */; };
@@ -22,9 +30,10 @@
 		FEAA8E4E2BD03DBE008D1C84 /* PlaylistHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA8E4D2BD03DBE008D1C84 /* PlaylistHeaderView.swift */; };
 		FEAA8E502BD144DE008D1C84 /* PlaylistDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA8E4F2BD144DE008D1C84 /* PlaylistDescriptionCell.swift */; };
 		FEAA8E522BD15EE2008D1C84 /* SongRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA8E512BD15EE2008D1C84 /* SongRowCell.swift */; };
-		FEAA8E542BD29D9B008D1C84 /* SwiftfulUI in Frameworks */ = {isa = PBXBuildFile; productRef = FEAA8E532BD29D9B008D1C84 /* SwiftfulUI */; };
-		FEAA8E562BD29DA5008D1C84 /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = FEAA8E552BD29DA5008D1C84 /* SwiftfulRouting */; };
-		FEAA8E582BD29DB0008D1C84 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FEAA8E572BD29DB0008D1C84 /* SDWebImageSwiftUI */; };
+		FEAA8E5D2BD2BF67008D1C84 /* BumbleHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA8E5C2BD2BF67008D1C84 /* BumbleHomeView.swift */; };
+		FEAA8E5F2BD3F839008D1C84 /* BumbleFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA8E5E2BD3F839008D1C84 /* BumbleFilterView.swift */; };
+		FEAA8E612BD41AB4008D1C84 /* BumbleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA8E602BD41AB4008D1C84 /* BumbleCardView.swift */; };
+		FEAA8E632BD53CAD008D1C84 /* BumbleHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA8E622BD53CAC008D1C84 /* BumbleHeartView.swift */; };
 		FEDC0E902BCD6E64006BA0B6 /* SpotifyHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDC0E8F2BCD6E64006BA0B6 /* SpotifyHomeView.swift */; };
 		FEDC0E942BCD7795006BA0B6 /* SpotifyCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDC0E932BCD7795006BA0B6 /* SpotifyCategoryCell.swift */; };
 		FEDC0E972BCD7E3F006BA0B6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDC0E962BCD7E3F006BA0B6 /* Category.swift */; };
@@ -32,6 +41,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE4735112BD691A100F5D697 /* InterestPillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPillView.swift; sourceTree = "<group>"; };
+		FE4735132BD69A4B00F5D697 /* InterestPillGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestPillGridView.swift; sourceTree = "<group>"; };
+		FE4735152BD96D9600F5D697 /* BumbleProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleProfileImageCell.swift; sourceTree = "<group>"; };
+		FE4735172BD97EF100F5D697 /* BumbleChatPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleChatPreviewCell.swift; sourceTree = "<group>"; };
+		FE4735192BD9923400F5D697 /* BumbleChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleChatsView.swift; sourceTree = "<group>"; };
 		FE5FB8582BC419FF00BE9245 /* PopularUIs-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PopularUIs-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE5FB85B2BC419FF00BE9245 /* PopularUIs_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularUIs_SwiftUIApp.swift; sourceTree = "<group>"; };
 		FE5FB85D2BC419FF00BE9245 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +62,10 @@
 		FEAA8E4D2BD03DBE008D1C84 /* PlaylistHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistHeaderView.swift; sourceTree = "<group>"; };
 		FEAA8E4F2BD144DE008D1C84 /* PlaylistDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDescriptionCell.swift; sourceTree = "<group>"; };
 		FEAA8E512BD15EE2008D1C84 /* SongRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRowCell.swift; sourceTree = "<group>"; };
+		FEAA8E5C2BD2BF67008D1C84 /* BumbleHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleHomeView.swift; sourceTree = "<group>"; };
+		FEAA8E5E2BD3F839008D1C84 /* BumbleFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleFilterView.swift; sourceTree = "<group>"; };
+		FEAA8E602BD41AB4008D1C84 /* BumbleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleCardView.swift; sourceTree = "<group>"; };
+		FEAA8E622BD53CAC008D1C84 /* BumbleHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumbleHeartView.swift; sourceTree = "<group>"; };
 		FEDC0E8F2BCD6E64006BA0B6 /* SpotifyHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyHomeView.swift; sourceTree = "<group>"; };
 		FEDC0E932BCD7795006BA0B6 /* SpotifyCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyCategoryCell.swift; sourceTree = "<group>"; };
 		FEDC0E962BCD7E3F006BA0B6 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -59,9 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEAA8E582BD29DB0008D1C84 /* SDWebImageSwiftUI in Frameworks */,
-				FEAA8E542BD29D9B008D1C84 /* SwiftfulUI in Frameworks */,
-				FEAA8E562BD29DA5008D1C84 /* SwiftfulRouting in Frameworks */,
+				FE47350D2BD65B7B00F5D697 /* SDWebImageSwiftUI in Frameworks */,
+				FE4735072BD65B6500F5D697 /* SwiftfulUI in Frameworks */,
+				FE47350A2BD65B6F00F5D697 /* SwiftfulRouting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +91,7 @@
 			children = (
 				FE5FB85A2BC419FF00BE9245 /* PopularUIs-SwiftUI */,
 				FE5FB8592BC419FF00BE9245 /* Products */,
+				FEE2AB482BD57D9400EADE9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +109,7 @@
 				FE5FB85B2BC419FF00BE9245 /* PopularUIs_SwiftUIApp.swift */,
 				FE5FB85D2BC419FF00BE9245 /* ContentView.swift */,
 				FE5FB86C2BC41CAE00BE9245 /* Shared */,
+				FEAA8E592BD2BBE4008D1C84 /* Bumble */,
 				FEDC0E8C2BCD6D63006BA0B6 /* Spotify */,
 				FE5FB85F2BC41A0000BE9245 /* Assets.xcassets */,
 				FE5FB8612BC41A0000BE9245 /* Preview Content */,
@@ -115,6 +135,38 @@
 				FE5FB8752BC436B600BE9245 /* User.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		FEAA8E592BD2BBE4008D1C84 /* Bumble */ = {
+			isa = PBXGroup;
+			children = (
+				FEAA8E5A2BD2BEC1008D1C84 /* Components */,
+				FEAA8E5B2BD2BEC9008D1C84 /* Screens */,
+			);
+			path = Bumble;
+			sourceTree = "<group>";
+		};
+		FEAA8E5A2BD2BEC1008D1C84 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FEAA8E5E2BD3F839008D1C84 /* BumbleFilterView.swift */,
+				FEAA8E602BD41AB4008D1C84 /* BumbleCardView.swift */,
+				FEAA8E622BD53CAC008D1C84 /* BumbleHeartView.swift */,
+				FE4735112BD691A100F5D697 /* InterestPillView.swift */,
+				FE4735132BD69A4B00F5D697 /* InterestPillGridView.swift */,
+				FE4735152BD96D9600F5D697 /* BumbleProfileImageCell.swift */,
+				FE4735172BD97EF100F5D697 /* BumbleChatPreviewCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FEAA8E5B2BD2BEC9008D1C84 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FEAA8E5C2BD2BF67008D1C84 /* BumbleHomeView.swift */,
+				FE4735192BD9923400F5D697 /* BumbleChatsView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		FEDC0E8C2BCD6D63006BA0B6 /* Spotify */ = {
@@ -158,6 +210,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		FEE2AB482BD57D9400EADE9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,9 +234,9 @@
 			);
 			name = "PopularUIs-SwiftUI";
 			packageProductDependencies = (
-				FEAA8E532BD29D9B008D1C84 /* SwiftfulUI */,
-				FEAA8E552BD29DA5008D1C84 /* SwiftfulRouting */,
-				FEAA8E572BD29DB0008D1C84 /* SDWebImageSwiftUI */,
+				FE4735062BD65B6500F5D697 /* SwiftfulUI */,
+				FE4735092BD65B6F00F5D697 /* SwiftfulRouting */,
+				FE47350C2BD65B7B00F5D697 /* SDWebImageSwiftUI */,
 			);
 			productName = "PopularUIs-SwiftUI";
 			productReference = FE5FB8582BC419FF00BE9245 /* PopularUIs-SwiftUI.app */;
@@ -208,9 +267,9 @@
 			);
 			mainGroup = FE5FB84F2BC419FF00BE9245;
 			packageReferences = (
-				FE5FB8692BC41BE300BE9245 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
-				FE5FB8772BC43A9500BE9245 /* XCRemoteSwiftPackageReference "SwiftfulUI" */,
-				FE5FB87A2BC43AD500BE9245 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */,
+				FE4735052BD65B6500F5D697 /* XCRemoteSwiftPackageReference "SwiftfulUI" */,
+				FE4735082BD65B6F00F5D697 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */,
+				FE47350B2BD65B7B00F5D697 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = FE5FB8592BC419FF00BE9245 /* Products */;
 			projectDirPath = "";
@@ -241,18 +300,27 @@
 				FE5FB86E2BC41CE500BE9245 /* ImageLoaderView.swift in Sources */,
 				FEDC0E972BCD7E3F006BA0B6 /* Category.swift in Sources */,
 				FEAA8E462BCFDB26008D1C84 /* SpotifyNewReleaseView.swift in Sources */,
+				FE4735122BD691A100F5D697 /* InterestPillView.swift in Sources */,
+				FEAA8E612BD41AB4008D1C84 /* BumbleCardView.swift in Sources */,
 				FEDC0E942BCD7795006BA0B6 /* SpotifyCategoryCell.swift in Sources */,
+				FEAA8E5D2BD2BF67008D1C84 /* BumbleHomeView.swift in Sources */,
 				FE5FB8722BC42B4400BE9245 /* DatabaseHelper.swift in Sources */,
 				FEDC0E902BCD6E64006BA0B6 /* SpotifyHomeView.swift in Sources */,
 				FEAA8E482BCFEF5D008D1C84 /* ImageTitleRowCell.swift in Sources */,
+				FE4735142BD69A4B00F5D697 /* InterestPillGridView.swift in Sources */,
 				FEAA8E4A2BD0360D008D1C84 /* SpotifyPlaylistView.swift in Sources */,
 				FEAA8E4E2BD03DBE008D1C84 /* PlaylistHeaderView.swift in Sources */,
 				FE5FB85E2BC419FF00BE9245 /* ContentView.swift in Sources */,
 				FE5FB85C2BC419FF00BE9245 /* PopularUIs_SwiftUIApp.swift in Sources */,
+				FE4735182BD97EF100F5D697 /* BumbleChatPreviewCell.swift in Sources */,
 				FE5FB8702BC41F2D00BE9245 /* Constants.swift in Sources */,
 				FEF0619F2BCE8B8900DA6A73 /* SpotifyRecentsCell.swift in Sources */,
 				FE5FB8742BC436A200BE9245 /* Product.swift in Sources */,
+				FE4735162BD96D9600F5D697 /* BumbleProfileImageCell.swift in Sources */,
+				FEAA8E5F2BD3F839008D1C84 /* BumbleFilterView.swift in Sources */,
+				FE47351A2BD9923400F5D697 /* BumbleChatsView.swift in Sources */,
 				FEAA8E522BD15EE2008D1C84 /* SongRowCell.swift in Sources */,
+				FEAA8E632BD53CAD008D1C84 /* BumbleHeartView.swift in Sources */,
 				FEAA8E502BD144DE008D1C84 /* PlaylistDescriptionCell.swift in Sources */,
 				FE5FB8762BC436B600BE9245 /* User.swift in Sources */,
 			);
@@ -385,6 +453,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PopularUIs-SwiftUI/Preview Content\"";
@@ -404,6 +473,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.pawelrudnik.PopularUIs-SwiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -415,6 +485,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PopularUIs-SwiftUI/Preview Content\"";
@@ -434,6 +505,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.pawelrudnik.PopularUIs-SwiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -464,15 +536,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FE5FB8692BC41BE300BE9245 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.2;
-			};
-		};
-		FE5FB8772BC43A9500BE9245 /* XCRemoteSwiftPackageReference "SwiftfulUI" */ = {
+		FE4735052BD65B6500F5D697 /* XCRemoteSwiftPackageReference "SwiftfulUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulUI.git";
 			requirement = {
@@ -480,7 +544,7 @@
 				minimumVersion = 1.2.0;
 			};
 		};
-		FE5FB87A2BC43AD500BE9245 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */ = {
+		FE4735082BD65B6F00F5D697 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulRouting.git";
 			requirement = {
@@ -488,22 +552,30 @@
 				minimumVersion = 5.3.2;
 			};
 		};
+		FE47350B2BD65B7B00F5D697 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FEAA8E532BD29D9B008D1C84 /* SwiftfulUI */ = {
+		FE4735062BD65B6500F5D697 /* SwiftfulUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FE5FB8772BC43A9500BE9245 /* XCRemoteSwiftPackageReference "SwiftfulUI" */;
+			package = FE4735052BD65B6500F5D697 /* XCRemoteSwiftPackageReference "SwiftfulUI" */;
 			productName = SwiftfulUI;
 		};
-		FEAA8E552BD29DA5008D1C84 /* SwiftfulRouting */ = {
+		FE4735092BD65B6F00F5D697 /* SwiftfulRouting */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FE5FB87A2BC43AD500BE9245 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */;
+			package = FE4735082BD65B6F00F5D697 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */;
 			productName = SwiftfulRouting;
 		};
-		FEAA8E572BD29DB0008D1C84 /* SDWebImageSwiftUI */ = {
+		FE47350C2BD65B7B00F5D697 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FE5FB8692BC41BE300BE9245 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			package = FE47350B2BD65B7B00F5D697 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
