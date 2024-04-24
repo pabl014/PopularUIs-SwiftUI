@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BumbleChatsView: View {
     
+    @Environment(\.router) var router
     @State private var allUsers: [User] = []
     
     var body: some View {
@@ -21,6 +22,7 @@ struct BumbleChatsView: View {
                     .padding(16)
                 
                 matchQueueSection
+                    .padding(.vertical, 16)
                 
                 recentsChatSection
 
@@ -51,6 +53,9 @@ struct BumbleChatsView: View {
         
         HStack(spacing: 0) {
             Image(systemName: "line.horizontal.3")
+                .onTapGesture {
+                    router.dismissScreen()
+                }
             Spacer(minLength: 0)
             Image(systemName: "magnifyingglass")
         }
