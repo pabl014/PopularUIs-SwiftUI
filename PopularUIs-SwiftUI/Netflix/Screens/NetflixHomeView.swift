@@ -48,6 +48,31 @@ struct NetflixHomeView: View {
                         )
                         .padding(24)
                     }
+                        
+                    LazyVStack(spacing: 16) {
+                        ForEach(Array(productRows.enumerated()), id: \.offset) { (rowIndex, row) in
+                            VStack(alignment: .leading, spacing: 6) {
+                                Text(row.title)
+                                    .font(.headline)
+                                    .padding(.horizontal, 16)
+                                
+                                ScrollView(.horizontal) {
+                                    LazyHStack {
+                                        ForEach(Array(row.products.enumerated()), id: \.offset) { (index , product) in
+                                            NetflixMovieCell(
+                                                imageName: product.firstImage,
+                                                title: product.title,
+                                                isRecentlyAdded: product.recentlyAdded,
+                                                topTenRanking: rowIndex == 1 ? (index + 1) : nil // we only want to give top10 for the second row
+                                            )
+                                        }
+                                    }
+                                    .padding(.horizontal, 16)
+                                }
+                                .scrollIndicators(.hidden)
+                            }
+                        }
+                    }
                     
                     ForEach(0..<20) { _ in
                         Rectangle()
