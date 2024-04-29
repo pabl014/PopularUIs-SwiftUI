@@ -31,56 +31,13 @@ struct NetflixHomeView: View {
                         .frame(height: fullHeaderSize.height)
                     
                     if let heroProduct {
-                        NetflixHeroCell(
-                            imageName: heroProduct.firstImage,
-                            isNetflixFilm: true,
-                            title: heroProduct.title,
-                            categories: [heroProduct.category.capitalized, heroProduct.brand],
-                            onBackgroundPressed: {
-                                
-                            },
-                            onPlayPressed: {
-                                
-                            },
-                            onMyListPressed: {
-                                
-                            }
-                        )
-                        .padding(24)
+                        heroCell(heroProduct: heroProduct)
                     }
                         
-                    LazyVStack(spacing: 16) {
-                        ForEach(Array(productRows.enumerated()), id: \.offset) { (rowIndex, row) in
-                            VStack(alignment: .leading, spacing: 6) {
-                                Text(row.title)
-                                    .font(.headline)
-                                    .padding(.horizontal, 16)
-                                
-                                ScrollView(.horizontal) {
-                                    LazyHStack {
-                                        ForEach(Array(row.products.enumerated()), id: \.offset) { (index , product) in
-                                            NetflixMovieCell(
-                                                imageName: product.firstImage,
-                                                title: product.title,
-                                                isRecentlyAdded: product.recentlyAdded,
-                                                topTenRanking: rowIndex == 1 ? (index + 1) : nil // we only want to give top10 for the second row
-                                            )
-                                        }
-                                    }
-                                    .padding(.horizontal, 16)
-                                }
-                                .scrollIndicators(.hidden)
-                            }
-                        }
-                    }
-                    
-                    ForEach(0..<20) { _ in
-                        Rectangle()
-                            .fill(Color.red)
-                            .frame(height: 200)
-                    }
+                    categoryRows
                 }
             }
+            .scrollIndicators(.hidden)
             
             VStack(spacing: 0) {
                 header
@@ -159,6 +116,55 @@ struct NetflixHomeView: View {
                     }
             }
             .font(.title2)
+        }
+    }
+    
+    
+    private func heroCell(heroProduct: Product) -> some View {
+        
+        NetflixHeroCell(
+            imageName: heroProduct.firstImage,
+            isNetflixFilm: true,
+            title: heroProduct.title,
+            categories: [heroProduct.category.capitalized, heroProduct.brand],
+            onBackgroundPressed: {
+                
+            },
+            onPlayPressed: {
+                
+            },
+            onMyListPressed: {
+                
+            }
+        )
+        .padding(24)
+    }
+    
+    
+    private var categoryRows: some View {
+        LazyVStack(spacing: 16) {
+            ForEach(Array(productRows.enumerated()), id: \.offset) { (rowIndex, row) in
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(row.title)
+                        .font(.headline)
+                        .padding(.horizontal, 16)
+                    
+                    ScrollView(.horizontal) {
+                        LazyHStack {
+                            ForEach(Array(row.products.enumerated()), id: \.offset) { (index , product) in
+                                NetflixMovieCell(
+                                    imageName: product.firstImage,
+                                    title: product.title,
+                                    isRecentlyAdded: product.recentlyAdded,
+                                    topTenRanking: rowIndex == 1 ? (index + 1) : nil // we only want to give top10 for the second row
+                                )
+                            }
+                        }
+                        .padding(.horizontal, 16)
+                    }
+                    .scrollIndicators(.hidden)
+                }
+            }
         }
     }
 }
