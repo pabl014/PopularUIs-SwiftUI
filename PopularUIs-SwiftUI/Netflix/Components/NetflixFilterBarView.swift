@@ -75,6 +75,7 @@ fileprivate struct NetflixFilterBarPreview: View {
     @State private var filters = FilterModel.mockArray
     @State private var selectedFilter: FilterModel? = nil
     
+    // 22:50 netflix 1/6 explanation about holding a state 
     var body: some View {
         NetflixFilterBarView(
             filters: filters,
