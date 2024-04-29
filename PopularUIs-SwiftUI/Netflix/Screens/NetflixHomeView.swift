@@ -6,15 +6,56 @@
 //
 
 import SwiftUI
+import SwiftfulUI
 
 struct NetflixHomeView: View {
     
     @State private var filters = FilterModel.mockArray
     @State private var selectedFilter: FilterModel? = nil
+    @State private var fullHeaderSize: CGSize = .zero
+    
+    @State private var heroProduct: Product? = nil
+    @State private var currentUser: User? = nil
+    @State private var productRows: [ProductRow] = []
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             Color.netflixBlack.ignoresSafeArea()
+            
+            ScrollView(.vertical) {
+                VStack(spacing: 8) {
+                    
+                    Rectangle()
+                        .opacity(0)
+                        //.fill(.orange)
+                        .frame(height: fullHeaderSize.height)
+                    
+                    if let heroProduct {
+                        NetflixHeroCell(
+                            imageName: heroProduct.firstImage,
+                            isNetflixFilm: true,
+                            title: heroProduct.title,
+                            categories: [heroProduct.category.capitalized, heroProduct.brand],
+                            onBackgroundPressed: {
+                                
+                            },
+                            onPlayPressed: {
+                                
+                            },
+                            onMyListPressed: {
+                                
+                            }
+                        )
+                        .padding(24)
+                    }
+                    
+                    ForEach(0..<20) { _ in
+                        Rectangle()
+                            .fill(Color.red)
+                            .frame(height: 200)
+                    }
+                }
+            }
             
             VStack(spacing: 0) {
                 header
@@ -32,10 +73,45 @@ struct NetflixHomeView: View {
                 )
                 .padding(.top, 16)
                 
-                Spacer(minLength: 0)
+                //Spacer(minLength: 0)
             }
+            .background(.blue)
+            .readingFrame { frame in // wrapping geometry reader on the background and getting the geometry of the object
+                fullHeaderSize = frame.size
+            }
+            
+            
         }
         .foregroundStyle(.netflixWhite)
+        .task {
+            await getData()
+        }
+        .toolbar(.hidden, for: .navigationBar)
+    }
+    
+    
+    private func getData() async {
+        
+        guard productRows.isEmpty else { return }
+        
+        do {
+            currentUser = try await DatabaseHelper().getUsers().first
+            let products = try await DatabaseHelper().getProducts()
+            heroProduct = products.first
+            
+            // productRows operations:
+            var rows: [ProductRow] = []
+            let allBrands = Set(products.map { $0.brand }) // Set to remove duplicates
+            for brand in allBrands {
+                // let products = self.products.filter({ $0.brand == brand }) // get all products from current brand
+                rows.append(ProductRow(title: brand.capitalized, products: products))
+            }
+            
+            productRows = rows
+            
+        } catch {
+            // print("Some error occured")
+        }
     }
     
     
