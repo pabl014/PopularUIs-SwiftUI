@@ -13,6 +13,7 @@ struct NetflixHomeView: View {
     @State private var filters = FilterModel.mockArray
     @State private var selectedFilter: FilterModel? = nil
     @State private var fullHeaderSize: CGSize = .zero
+    @State private var scrollViewOffset: CGFloat = 0 // tracking vertical scroll
     
     @State private var heroProduct: Product? = nil
     @State private var currentUser: User? = nil
@@ -22,44 +23,70 @@ struct NetflixHomeView: View {
         ZStack(alignment: .top) {
             Color.netflixBlack.ignoresSafeArea()
             
-            ScrollView(.vertical) {
-                VStack(spacing: 8) {
-                    
-                    Rectangle()
-                        .opacity(0)
-                        //.fill(.orange)
-                        .frame(height: fullHeaderSize.height)
-                    
-                    if let heroProduct {
-                        heroCell(heroProduct: heroProduct)
-                    }
+            ScrollViewWithOnScrollChanged(
+                .vertical,
+                showsIndicators: false,
+                content: {
+                    VStack(spacing: 8) {
+                        Rectangle()
+                            .opacity(0)
+                            //.fill(.orange)
+                            .frame(height: fullHeaderSize.height)
                         
-                    categoryRows
+                        if let heroProduct {
+                            heroCell(heroProduct: heroProduct)
+                        }
+                        
+                        
+                        Text("\(scrollViewOffset)")
+                            .foregroundStyle(.red)
+                        
+                        categoryRows
+                    }
+                },
+                onScrollChanged: { offset in
+                    scrollViewOffset = offset.y
                 }
-            }
-            .scrollIndicators(.hidden)
+            )
             
             VStack(spacing: 0) {
                 header
                     .padding(.horizontal, 16)
                 
-                NetflixFilterBarView(
-                    filters: filters,
-                    selectedFilter: selectedFilter,
-                    onFilterPressed: { newFilter in
-                        selectedFilter = newFilter
-                    },
-                    onXMarkPressed: {
-                        selectedFilter = nil
-                    }
-                )
-                .padding(.top, 16)
-                
-                //Spacer(minLength: 0)
+                if scrollViewOffset > -20 {
+                    NetflixFilterBarView(
+                        filters: filters,
+                        selectedFilter: selectedFilter,
+                        onFilterPressed: { newFilter in
+                            selectedFilter = newFilter
+                        },
+                        onXMarkPressed: {
+                            selectedFilter = nil
+                        }
+                    )
+                    .padding(.top, 16)
+                    .transition(.move(edge: .top).combined(with: .opacity))
+                }
             }
-            .background(.blue)
+            .padding(.bottom, 8)
+            .background(
+                // Material.ultraThin
+                // or:
+                ZStack {
+                    if scrollViewOffset < -70 {
+                        Rectangle()
+                            .fill(.clear)
+                            .background(.ultraThinMaterial)
+                            .brightness(-0.2)
+                            .ignoresSafeArea()
+                    }
+                }
+            )
+            .animation(.smooth, value: scrollViewOffset)
             .readingFrame { frame in // wrapping geometry reader on the background and getting the geometry of the object
-                fullHeaderSize = frame.size
+                if fullHeaderSize == .zero {
+                    fullHeaderSize = frame.size
+                }
             }
             
             
