@@ -23,6 +23,8 @@ struct NetflixHomeView: View {
         ZStack(alignment: .top) {
             Color.netflixBlack.ignoresSafeArea()
             
+            backgroundGradientLayer
+            
             scrollViewLayer
             
             fullHeaderWithFilter
@@ -58,6 +60,35 @@ struct NetflixHomeView: View {
         } catch {
             // print("Some error occured")
         }
+    }
+    
+    
+    private var backgroundGradientLayer: some View {
+        
+        ZStack {
+            LinearGradient(
+                colors: [
+                    .netflixDarkGray.opacity(1),
+                    .netflixDarkGray.opacity(0)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
+            
+            LinearGradient(
+                colors: [
+                    .netflixDarkRed.opacity(0.5),
+                    .netflixDarkRed.opacity(0)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
+        }
+        .frame(maxHeight: max(10, (400 + (scrollViewOffset * 0.75)))) // + scrollViewOffset -> it moves with the scrollview, * 0.75 -> moves a lil bit slower
+        .opacity(scrollViewOffset < -250 ? 0 : 1)
+        .animation(.easeInOut, value: scrollViewOffset)
     }
     
     
