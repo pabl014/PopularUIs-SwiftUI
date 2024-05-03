@@ -203,7 +203,8 @@ struct NetflixHomeView: View {
                 }
             },
             onScrollChanged: { offset in
-                scrollViewOffset = offset.y
+                scrollViewOffset = min(0, offset.y)
+                //scrollViewOffset = offset.y
             }
         )
     }
