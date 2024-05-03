@@ -30,7 +30,25 @@ struct NetflixMovieDetailsView: View {
                 )
                 
                 ScrollView(.vertical) {
-                    
+                    VStack(spacing: 16) {
+                        NetflixDetailsProductView(
+                            title: product.title,
+                            isNew: true,
+                            yearReleased: "2024",
+                            seasonsCount: 7,
+                            hasClosedCaptions: true,
+                            isTopTen: 3,
+                            descriptionText: product.description,
+                            castText: "Robert De Niro, Al Pacino, Mariusz Pudzianowski",
+                            onPlayPressed: {
+                                
+                            },
+                            onDownloadPressed: {
+                                
+                            }
+                        )
+                    }
+                    .padding(8)
                 }
                 .scrollIndicators(.hidden)
             }
