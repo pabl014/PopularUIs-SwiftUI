@@ -39,6 +39,7 @@ enum RateOption: String, CaseIterable { // CaseIterable -> we can loop on them
 struct RateButton: View {
     
     @State private var showPopover: Bool = false
+    var onRatingSelected: ((RateOption) -> Void)? = nil
     
     var body: some View {
         VStack(spacing: 8) {
@@ -83,6 +84,7 @@ struct RateButton: View {
         .background(.black.opacity(0.001))
         .onTapGesture {
             showPopover = false
+            onRatingSelected?(option)
         }
     }
 }
