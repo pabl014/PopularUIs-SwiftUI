@@ -11,6 +11,7 @@ struct NetflixMovieDetailsView: View {
     
     var product: Product = .mockProduct
     @State private var progress: Double = 0.2
+    @State private var isMyList: Bool = false
     
     var body: some View {
         ZStack {
@@ -30,7 +31,7 @@ struct NetflixMovieDetailsView: View {
                 )
                 
                 ScrollView(.vertical) {
-                    VStack(spacing: 16) {
+                    VStack(alignment: .leading, spacing: 16) {
                         NetflixDetailsProductView(
                             title: product.title,
                             isNew: true,
@@ -47,6 +48,20 @@ struct NetflixMovieDetailsView: View {
                                 
                             }
                         )
+                        
+                        HStack(spacing: 32) {
+                            MyListButton(isMyList: isMyList) {
+                                isMyList.toggle()
+                            }
+                            
+                            RateButton { selection in
+                                // do something with selection
+                                // ( if we want to do something with our database or do something that now that the user clicked love it
+                            }
+                            
+                            ShareButton()
+                        }
+                        .padding(.leading, 32)
                     }
                     .padding(8)
                 }
