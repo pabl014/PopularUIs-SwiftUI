@@ -15,11 +15,11 @@ struct MyListButton: View {
     var body: some View {
         VStack(spacing: 8) {
             ZStack {
-                if isMyList {
-                    Image(systemName: "checkmark")
-                } else {
-                    Image(systemName: "plus")
-                }
+                Image(systemName: "checkmark")
+                    .opacity(isMyList ? 1 : 0)
+                
+                Image(systemName: "plus")
+                    .opacity(isMyList ? 0 : 1)
             }
             .font(.title)
             
