@@ -21,6 +21,10 @@ struct Product: Codable, Identifiable {
         images.first ?? Constants.randomImage
     }
     
+    // when it is called, it's going to be executed the first time I call it and only one forever, so if it calculate as true, it will remain as true for the life cycle of that session
+    let recentlyAdded: Bool = {
+        return Int.random(in: 1...4) == 1 // making it true for 25% of the cases
+    }()
     
     static var mockProduct: Product {
         Product(
