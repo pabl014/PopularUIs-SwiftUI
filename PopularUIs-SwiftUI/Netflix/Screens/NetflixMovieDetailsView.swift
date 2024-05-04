@@ -33,58 +33,13 @@ struct NetflixMovieDetailsView: View {
                 
                 ScrollView(.vertical) {
                     VStack(alignment: .leading, spacing: 16) {
-                        NetflixDetailsProductView(
-                            title: product.title,
-                            isNew: true,
-                            yearReleased: "2024",
-                            seasonsCount: 7,
-                            hasClosedCaptions: true,
-                            isTopTen: 3,
-                            descriptionText: product.description,
-                            castText: "Robert De Niro, Al Pacino, Mariusz Pudzianowski",
-                            onPlayPressed: {
-                                
-                            },
-                            onDownloadPressed: {
-                                
-                            }
-                        )
                         
-                        HStack(spacing: 32) {
-                            MyListButton(isMyList: isMyList) {
-                                isMyList.toggle()
-                            }
-                            
-                            RateButton { selection in
-                                // do something with selection
-                                // ( if we want to do something with our database or do something that now that the user clicked love it
-                            }
-                            
-                            ShareButton()
-                        }
-                        .padding(.leading, 32)
+                        detailsProductSection
                         
-                        VStack(alignment: .leading) {
-                            Text("More Like This")
-                                .font(.headline)
-                            
-                            LazyVGrid(
-                                columns: Array(repeating: GridItem(.flexible(), spacing: 8 ), count: 3),
-                                alignment: .center,
-                                spacing: 8,
-                                pinnedViews: [],
-                                content: {
-                                    ForEach(products) { product in
-                                        NetflixMovieCell(
-                                            imageName: product.firstImage,
-                                            title: product.title,
-                                            isRecentlyAdded: product.recentlyAdded,
-                                            topTenRanking: nil
-                                        )
-                                    }
-                            })
-                        }
-                        .foregroundStyle(.netflixWhite)
+                        buttonsSection
+
+                        productsGridSection
+
                     }
                     .padding(8)
                 }
@@ -108,6 +63,68 @@ struct NetflixMovieDetailsView: View {
         } catch {
             
         }
+    }
+    
+    
+    private var detailsProductSection: some View {
+        NetflixDetailsProductView(
+            title: product.title,
+            isNew: true,
+            yearReleased: "2024",
+            seasonsCount: 7,
+            hasClosedCaptions: true,
+            isTopTen: 3,
+            descriptionText: product.description,
+            castText: "Robert De Niro, Al Pacino, Mariusz Pudzianowski",
+            onPlayPressed: {
+                
+            },
+            onDownloadPressed: {
+                
+            }
+        )
+    }
+    
+    
+    private var buttonsSection: some View {
+        HStack(spacing: 32) {
+            MyListButton(isMyList: isMyList) {
+                isMyList.toggle()
+            }
+            
+            RateButton { selection in
+                // do something with selection
+                // ( if we want to do something with our database or do something that now that the user clicked love it
+            }
+            
+            ShareButton()
+        }
+        .padding(.leading, 32)
+    }
+    
+    
+    private var productsGridSection: some View {
+        VStack(alignment: .leading) {
+            Text("More Like This")
+                .font(.headline)
+            
+            LazyVGrid(
+                columns: Array(repeating: GridItem(.flexible(), spacing: 8 ), count: 3),
+                alignment: .center,
+                spacing: 8,
+                pinnedViews: [],
+                content: {
+                    ForEach(products) { product in
+                        NetflixMovieCell(
+                            imageName: product.firstImage,
+                            title: product.title,
+                            isRecentlyAdded: product.recentlyAdded,
+                            topTenRanking: nil
+                        )
+                    }
+            })
+        }
+        .foregroundStyle(.netflixWhite)
     }
 }
 
