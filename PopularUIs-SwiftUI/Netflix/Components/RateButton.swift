@@ -46,7 +46,7 @@ struct RateButton: View {
             Image(systemName: "hand.thumbsup")
                 .font(.title)
 
-            Text("My List")
+            Text("Rate")
                 .font(.caption)
                 .foregroundStyle(.netflixLightGray)
         }
